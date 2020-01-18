@@ -1,86 +1,149 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
-    public float speed;
-    public float jumpPower;
+    [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
+    [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
+    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
+    [SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
+    [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
+    [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
+    [SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
+    [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
+    [SerializeField] public bool m_Grounded;                                   // Whether or not the player is grounded.
 
-    private Rigidbody2D myRigibody2D;
-    private Transform myTransform;
 
-    private float h = 0.0f;
-    private float v = 0.0f;
 
-    private Vector3 dir;
-    private Vector2 dir2;
+    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+    private Rigidbody2D m_Rigidbody2D;
+    private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+    private Vector3 m_Velocity = Vector3.zero;
+    [SerializeField] private int m_InitJumpCount = 1;
+    private int m_jumpCount;
 
-    private bool isGrounded = false;
-    public Vector2 debugVelocity;
-    void Start()
+
+    private Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+    private string[] dicStr = { "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m" };
+
+
+
+    [Header("Events")]
+    [Space]
+
+    public UnityEvent OnLandEvent;
+
+    [System.Serializable]
+    public class BoolEvent : UnityEvent<bool> { }
+
+    public BoolEvent OnCrouchEvent;
+    private bool m_wasCrouching = false;
+
+    private void Awake()
     {
-        myRigibody2D = this.GetComponent<Rigidbody2D>();
-        myTransform = this.GetComponent<Transform>();
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
+
+        if (OnCrouchEvent == null)
+            OnCrouchEvent = new BoolEvent();
+
+        for (int i = 0; i < dicStr.Length; i++)
+        {
+            keyValuePairs.Add(dicStr[i], i);
+        }
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        bool wasGrounded = m_Grounded;
+        m_Grounded = false;
+
+        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != this.gameObject)
+            {
+                m_jumpCount = m_InitJumpCount;
+                m_Grounded = true;
+
+                if (!wasGrounded)
+                    OnLandEvent.Invoke();
+            }
+        }
+    }
+
+
+    public void Move(float move, bool jump)
+    {
         
-    }
-    
-    void FixedUpdate()
-    {
-        GetKeyDwon();
-    }
-    
-    void Update()
-    {
-        MyDebug();
-    }
-
-    private void MyDebug()
-    {
-        debugVelocity = myRigibody2D.velocity;
-    }
-
-    private void Move()
-    {
-        h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
-
-        dir = Vector3.right * h;
-        dir = dir.normalized;
-        myTransform.Translate(dir * speed * Time.deltaTime);
-
-    }
-
-
-    private void GetKeyDwon()
-    {
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        if (m_Grounded || m_AirControl)
         {
-            Move();
+            // Move the character by finding the target velocity
+            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+            // And then smoothing it out and applying it to the character
+            m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+            if (move > 0 && !m_FacingRight)
+            {
+                Flip();
+            }
+            else if (move < 0 && m_FacingRight)
+            {
+                Flip();
+            }
         }
 
-        if (Input.GetKey(KeyCode.DownArrow)|| Input.GetKey(KeyCode.UpArrow))
+        if (m_Grounded && jump)
         {
-            Action();
+            m_Grounded = false;
+            jump = false;
+            m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
+            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            m_jumpCount--;
         }
 
-
-        if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt))
+        if (!m_Grounded && jump)
         {
-            Jump();
+            if (m_jumpCount>0)
+            {
+                m_jumpCount--;
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            }
         }
     }
 
 
-    private void Jump()
+    public void Attack(string key, bool isPress)
     {
-        myRigibody2D.AddForce(Vector2.up * jumpPower);
+        if (isPress)
+        {
+            Debug.Log(key);
+            if (keyValuePairs.ContainsKey(key))
+            {
+                //실행
+                Debug.Log(keyValuePairs[key]);
+            }
+
+        }
     }
 
-    private void Action()
+
+    private void Flip()
     {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
 
+        // Multiply the player's x local scale by -1.
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
-
 }
-
