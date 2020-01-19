@@ -24,11 +24,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private int m_InitJumpCount = 1;
     private int m_jumpCount;
 
-
-    private Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
-    private string[] dicStr = { "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m" };
-
-
+    
 
     [Header("Events")]
     [Space]
@@ -50,11 +46,7 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
-
-        for (int i = 0; i < dicStr.Length; i++)
-        {
-            keyValuePairs.Add(dicStr[i], i);
-        }
+        
 
 
     }
@@ -121,17 +113,11 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void Attack(string key, bool isPress)
+    public void Attack(int key, bool isPress)
     {
         if (isPress)
         {
             Debug.Log(key);
-            if (keyValuePairs.ContainsKey(key))
-            {
-                //실행
-                Debug.Log(keyValuePairs[key]);
-            }
-
         }
     }
 
@@ -145,5 +131,15 @@ public class CharacterController2D : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+
+    public void Action(int i)
+    {
+        // 키보드의 i번째에 연결된 스킬을 동작한다.
+        // if(키보드[i].Mp <= 캐릭터Info.Mp)
+        // {
+        //      Skill.Ative;
+        // }
     }
 }

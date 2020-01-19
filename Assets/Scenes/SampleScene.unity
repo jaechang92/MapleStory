@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 613763349}
   speed: 40
+  key: 0
 --- !u!50 &613763347
 Rigidbody2D:
   serializedVersion: 4
