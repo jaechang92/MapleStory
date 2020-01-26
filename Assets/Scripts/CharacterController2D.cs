@@ -113,7 +113,7 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void Attack(int key, bool isPress)
+    public void PressKey(int key, bool isPress)
     {
         if (isPress)
         {

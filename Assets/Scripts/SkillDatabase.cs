@@ -12,7 +12,7 @@ public class SkillDatabase
     public Sprite skillImage;
     public enum skillType { Ative,Passive };
     public skillType m_skillType;
-    public float skillPerSentDamage;
+    public float skillPersentDamage;
     public float skillDelayTime;
     public Vector2 skillRange = new Vector2();
     public float usedMana;

@@ -8,12 +8,18 @@ public class UIManager : MonoBehaviour
 
     public GameObject skillUI;
     public List<GameObject> skillSets;
+    private KeyCode key;
+
+    private void Start()
+    {
+        key = GameManager.instance.key;
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(key))
         {
-            Debug.Log("Press K");
+            Debug.Log(key);
             skillUI.SetActive(!skillUI.activeSelf);
         }
 
