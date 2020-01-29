@@ -16,17 +16,19 @@ public class PlayerMovement : MonoBehaviour
     private KeyCode key;
     private Dictionary<string, int> keyCodeValuePairs;
     public bool isPress;
+
     void Start()
     {
-        key = GameManager.instance.key;
+        
         keyCodeValuePairs = GameManager.instance.keyCodeValuePairs;
-        isPress = GameManager.instance.isPress;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        isPress = GameManager.instance.isPress;
+        key = GameManager.instance.key;
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
 
@@ -49,12 +51,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (isPress)
         {
-            Debug.Log(isPress);
+            //Debug.Log(isPress);
         }
         if (key != KeyCode.None)
         {
+            //Debug.Log(key);
             controller.PressKey(keyCodeValuePairs[key.ToString()], isPress);
-            isPress = false;
+            GameManager.instance.isPress = false;
+            //Debug.Log(GameManager.instance.isPress);
+            GameManager.instance.key = KeyCode.None;
         }
     }
 }

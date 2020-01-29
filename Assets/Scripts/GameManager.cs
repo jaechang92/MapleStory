@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
             keyCodeValuePairs.Add(keyCodes[i].ToString(), i);
         }
     }
-
     public bool isPress { get; set; } = false;
     public bool _isPress;
     public Dictionary<string, int> keyCodeValuePairs = new Dictionary<string, int>();
@@ -45,11 +44,12 @@ public class GameManager : MonoBehaviour
                 if (Input.GetKeyDown(item))
                 {
                     key = item;
+                    isPress = true;
                 }
             }
-            isPress = true;
+            
         }
-        key = KeyCode.None;
+        //key = KeyCode.None;
     }
     //눌리면 bool 참거짓 작성
 

@@ -117,7 +117,7 @@ public class CharacterController2D : MonoBehaviour
     {
         if (isPress)
         {
-            Debug.Log(key);
+            //Debug.Log(key);
         }
     }
 

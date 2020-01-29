@@ -25,14 +25,9 @@ public class PressEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
-        if (this.gameObject.CompareTag("TitleBar"))
-        {
-            m_transform = this.gameObject.transform.parent.transform;
-        }
-        else
-        {
-            m_transform = this.gameObject.transform;
-        }
+        
+        m_transform = this.gameObject.transform;
+        
     }
 
     // Update is called once per frame

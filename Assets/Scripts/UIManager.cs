@@ -12,12 +12,12 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        key = GameManager.instance.key;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(key))
+        key = GameManager.instance.key;
+        if (key == KeyCode.K)
         {
             Debug.Log(key);
             skillUI.SetActive(!skillUI.activeSelf);
