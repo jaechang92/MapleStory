@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 0.0f;
     private float horizontalMove = 0.0f;
+    private float VerticalMove = 0.0f;
     private bool jump = false;
 
     private string pressKey;
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         key = GameManager.instance.key;
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+        VerticalMove = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime , jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, VerticalMove * Time.fixedDeltaTime, jump);
         jump = false;
 
         if (isPress)

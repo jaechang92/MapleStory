@@ -24,7 +24,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private int m_InitJumpCount = 1;
     private int m_jumpCount;
 
-    
+    private GameObject nowGround;
 
     [Header("Events")]
     [Space]
@@ -65,7 +65,11 @@ public class CharacterController2D : MonoBehaviour
             {
                 m_jumpCount = m_InitJumpCount;
                 m_Grounded = true;
-
+                if (nowGround != colliders[i].gameObject)
+                {
+                    nowGround = colliders[i].gameObject;
+                    this.gameObject.GetComponent<Collider2D>().enabled = true;
+                }
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
@@ -73,27 +77,35 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void Move(float move, bool jump)
+    public void Move(float moveH,float moveV, bool jump)
     {
         
         if (m_Grounded || m_AirControl)
         {
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+            Vector3 targetVelocity = new Vector2(moveH * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-            if (move > 0 && !m_FacingRight)
+            if (moveH > 0 && !m_FacingRight)
             {
                 Flip();
             }
-            else if (move < 0 && m_FacingRight)
+            else if (moveH < 0 && m_FacingRight)
             {
                 Flip();
             }
+
+            
         }
 
-        if (m_Grounded && jump)
+
+        if (m_Grounded && jump && moveV < 0 && nowGround.layer == 10)
+        {
+            this.gameObject.GetComponent<Collider2D>().enabled = false;
+            
+        }
+        else if (m_Grounded && jump)
         {
             m_Grounded = false;
             jump = false;
