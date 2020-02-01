@@ -68,7 +68,7 @@ public class CharacterController2D : MonoBehaviour
                 if (nowGround != colliders[i].gameObject)
                 {
                     nowGround = colliders[i].gameObject;
-                    this.gameObject.GetComponent<Collider2D>().enabled = true;
+                    
                 }
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
@@ -129,7 +129,8 @@ public class CharacterController2D : MonoBehaviour
     {
         if (isPress)
         {
-            //Debug.Log(key);
+            Debug.Log(key);
+            Action(key);
         }
     }
 
@@ -153,5 +154,13 @@ public class CharacterController2D : MonoBehaviour
         // {
         //      Skill.Ative;
         // }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject == nowGround)
+        {
+            this.gameObject.GetComponent<Collider2D>().enabled = true;
+        }
     }
 }

@@ -5,13 +5,26 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    static public UIManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+    }
 
     public GameObject skillUI;
     public List<GameObject> skillSets;
     private KeyCode key;
+    public GameObject keyParent;
+    public KeySetValue[] keySets;
 
     private void Start()
     {
+        keySets = keyParent.GetComponentsInChildren<KeySetValue>();
     }
 
     private void Update()

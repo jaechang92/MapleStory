@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         {
             keyCodeValuePairs.Add(keyCodes[i].ToString(), i);
         }
+        Debug.Log(keyCodeValuePairs.Count);
     }
     public bool isPress { get; set; } = false;
     public bool _isPress;
