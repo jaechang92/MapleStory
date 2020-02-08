@@ -20,11 +20,15 @@ public class UIManager : MonoBehaviour
     public List<GameObject> skillSets;
     private KeyCode key;
     public GameObject keyParent;
-    public KeySetValue[] keySets;
+    public List<KeySetValue> keySets;
 
     private void Start()
     {
-        keySets = keyParent.GetComponentsInChildren<KeySetValue>();
+        foreach (var item in keyParent.GetComponentsInChildren<KeySetValue>())
+        {
+            keySets.Add(item);
+        }
+        
     }
 
     private void Update()
@@ -53,4 +57,5 @@ public class UIManager : MonoBehaviour
         }
         
     }
+    
 }

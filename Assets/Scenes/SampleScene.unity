@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 64133133}
   - component: {fileID: 64133132}
   - component: {fileID: 64133131}
+  - component: {fileID: 64133134}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -286,6 +287,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64133129}
   m_CullTransparentMesh: 0
+--- !u!114 &64133134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64133129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &68185970
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,10 +474,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245, y: -315}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119894472
 MonoBehaviour:
@@ -470,7 +491,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &119894473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +542,7 @@ GameObject:
   - component: {fileID: 120599867}
   - component: {fileID: 120599866}
   - component: {fileID: 120599865}
+  - component: {fileID: 120599868}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -596,6 +620,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120599863}
   m_CullTransparentMesh: 0
+--- !u!114 &120599868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120599863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &132039316
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,10 +674,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132039318
 MonoBehaviour:
@@ -647,7 +691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 99
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &132039319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,10 +886,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179710407
 MonoBehaviour:
@@ -857,7 +903,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &179710408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,10 +976,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 665, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182021976
 MonoBehaviour:
@@ -945,7 +993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &182021977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,10 +1170,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 385, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214035029
 MonoBehaviour:
@@ -1137,7 +1187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &214035030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,10 +1260,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &226224042
 MonoBehaviour:
@@ -1225,7 +1277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &226224043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,10 +1504,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254305187
 MonoBehaviour:
@@ -1467,7 +1521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &254305188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,10 +1594,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &272281384
 MonoBehaviour:
@@ -1555,7 +1611,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &272281385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1938,10 +1996,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380234307
 MonoBehaviour:
@@ -1955,7 +2013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &380234308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,51 +2087,7 @@ MonoBehaviour:
   - {fileID: 68185970}
   - {fileID: 206757509}
   keyParent: {fileID: 419571286}
-  keySets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  keySets: []
 --- !u!4 &380427582
 Transform:
   m_ObjectHideFlags: 0
@@ -2181,7 +2197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &419571287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2653,6 +2669,7 @@ GameObject:
   - component: {fileID: 524458187}
   - component: {fileID: 524458186}
   - component: {fileID: 524458185}
+  - component: {fileID: 524458188}
   m_Layer: 5
   m_Name: Skill (5)
   m_TagString: Untagged
@@ -2730,6 +2747,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524458183}
   m_CullTransparentMesh: 0
+--- !u!114 &524458188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524458183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &530467293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,10 +2801,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &530467295
 MonoBehaviour:
@@ -2781,7 +2818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &530467296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2908,10 +2947,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 385, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535207850
 MonoBehaviour:
@@ -2925,7 +2964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &535207851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,6 +3092,7 @@ GameObject:
   - component: {fileID: 571278983}
   - component: {fileID: 571278982}
   - component: {fileID: 571278981}
+  - component: {fileID: 571278984}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -3128,6 +3170,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571278979}
   m_CullTransparentMesh: 0
+--- !u!114 &571278984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571278979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &587827381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,6 +3529,7 @@ GameObject:
   - component: {fileID: 630592073}
   - component: {fileID: 630592072}
   - component: {fileID: 630592071}
+  - component: {fileID: 630592074}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -3544,6 +3607,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630592069}
   m_CullTransparentMesh: 0
+--- !u!114 &630592074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630592069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &633771897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3655,10 +3738,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646723266
 MonoBehaviour:
@@ -3672,7 +3755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &646723267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3788,10 +3873,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 525, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648238580
 MonoBehaviour:
@@ -3805,7 +3890,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &648238581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4697,10 +4784,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 595, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760354872
 MonoBehaviour:
@@ -4714,7 +4801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &760354873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4858,10 +4947,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788209135
 MonoBehaviour:
@@ -4875,7 +4964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 97
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &788209136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4946,10 +5037,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 455, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792763661
 MonoBehaviour:
@@ -4963,7 +5054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &792763662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5089,6 +5182,7 @@ GameObject:
   - component: {fileID: 837855011}
   - component: {fileID: 837855010}
   - component: {fileID: 837855009}
+  - component: {fileID: 837855012}
   m_Layer: 5
   m_Name: Skill (3)
   m_TagString: Untagged
@@ -5166,6 +5260,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837855007}
   m_CullTransparentMesh: 0
+--- !u!114 &837855012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837855007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &841713886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5285,6 +5399,7 @@ GameObject:
   - component: {fileID: 876576942}
   - component: {fileID: 876576941}
   - component: {fileID: 876576940}
+  - component: {fileID: 876576943}
   m_Layer: 5
   m_Name: Skill (4)
   m_TagString: Untagged
@@ -5362,6 +5477,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876576938}
   m_CullTransparentMesh: 0
+--- !u!114 &876576943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876576938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &890166832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,10 +5638,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 525, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &936105145
 MonoBehaviour:
@@ -5520,7 +5655,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &936105146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5668,10 +5805,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 525, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980152132
 MonoBehaviour:
@@ -5685,7 +5822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &980152133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5756,10 +5895,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994341246
 MonoBehaviour:
@@ -5773,7 +5912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &994341247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5998,10 +6139,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1044385277
 MonoBehaviour:
@@ -6015,7 +6156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1044385278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6743,6 +6886,7 @@ GameObject:
   - component: {fileID: 1293670639}
   - component: {fileID: 1293670638}
   - component: {fileID: 1293670637}
+  - component: {fileID: 1293670640}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -6820,6 +6964,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293670635}
   m_CullTransparentMesh: 0
+--- !u!114 &1293670640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293670635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 1
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &1295659313
 GameObject:
   m_ObjectHideFlags: 0
@@ -7162,10 +7326,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -315}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337939572
 MonoBehaviour:
@@ -7179,7 +7343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1337939573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7250,10 +7416,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 665, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1343221290
 MonoBehaviour:
@@ -7267,7 +7433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1343221291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7338,10 +7506,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1343302458
 MonoBehaviour:
@@ -7355,7 +7523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1343302459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7426,10 +7596,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 665, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383466878
 MonoBehaviour:
@@ -7443,7 +7613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1383466879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7769,10 +7941,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 455, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464891908
 MonoBehaviour:
@@ -7786,7 +7958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1464891909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7857,10 +8031,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 385, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482981588
 MonoBehaviour:
@@ -7874,7 +8048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1482981589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7945,10 +8121,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483573091
 MonoBehaviour:
@@ -7962,7 +8138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1483573092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8011,6 +8189,7 @@ GameObject:
   - component: {fileID: 1516559490}
   - component: {fileID: 1516559489}
   - component: {fileID: 1516559488}
+  - component: {fileID: 1516559491}
   m_Layer: 5
   m_Name: Skill (3)
   m_TagString: Untagged
@@ -8088,6 +8267,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516559486}
   m_CullTransparentMesh: 0
+--- !u!114 &1516559491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516559486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &1531104914
 GameObject:
   m_ObjectHideFlags: 0
@@ -8122,10 +8321,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 665, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1531104916
 MonoBehaviour:
@@ -8139,7 +8338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1531104917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8265,6 +8466,7 @@ GameObject:
   - component: {fileID: 1552281273}
   - component: {fileID: 1552281272}
   - component: {fileID: 1552281271}
+  - component: {fileID: 1552281274}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -8342,6 +8544,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552281269}
   m_CullTransparentMesh: 0
+--- !u!114 &1552281274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552281269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &1556068341
 GameObject:
   m_ObjectHideFlags: 0
@@ -8354,6 +8576,7 @@ GameObject:
   - component: {fileID: 1556068345}
   - component: {fileID: 1556068344}
   - component: {fileID: 1556068343}
+  - component: {fileID: 1556068346}
   m_Layer: 5
   m_Name: Skill (4)
   m_TagString: Untagged
@@ -8431,6 +8654,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556068341}
   m_CullTransparentMesh: 0
+--- !u!114 &1556068346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556068341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &1586647459
 GameObject:
   m_ObjectHideFlags: 0
@@ -8465,10 +8708,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 455, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1586647461
 MonoBehaviour:
@@ -8482,7 +8725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1586647462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8553,10 +8798,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1597608227
 MonoBehaviour:
@@ -8570,7 +8815,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 98
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1597608228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8641,10 +8888,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 455, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608196555
 MonoBehaviour:
@@ -8658,7 +8905,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1608196556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8707,6 +8956,7 @@ GameObject:
   - component: {fileID: 1610782004}
   - component: {fileID: 1610782003}
   - component: {fileID: 1610782002}
+  - component: {fileID: 1610782005}
   m_Layer: 5
   m_Name: Skill (3)
   m_TagString: Untagged
@@ -8784,6 +9034,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610782000}
   m_CullTransparentMesh: 0
+--- !u!114 &1610782005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610782000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &1614023601
 GameObject:
   m_ObjectHideFlags: 0
@@ -9049,10 +9319,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -315}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694832910
 MonoBehaviour:
@@ -9066,7 +9336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1694832911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9214,10 +9486,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759354980
 MonoBehaviour:
@@ -9231,7 +9503,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1759354981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9302,10 +9576,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785463906
 MonoBehaviour:
@@ -9319,7 +9593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1785463907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9467,10 +9743,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 525, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851512687
 MonoBehaviour:
@@ -9484,7 +9760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1851512688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9632,10 +9910,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863012183
 MonoBehaviour:
@@ -9649,7 +9927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1863012184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10228,10 +10508,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 385, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929277942
 MonoBehaviour:
@@ -10245,7 +10525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1929277943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10470,10 +10752,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -315}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956058275
 MonoBehaviour:
@@ -10487,7 +10769,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1956058276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10536,6 +10820,7 @@ GameObject:
   - component: {fileID: 1968461891}
   - component: {fileID: 1968461890}
   - component: {fileID: 1968461889}
+  - component: {fileID: 1968461892}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -10613,6 +10898,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968461887}
   m_CullTransparentMesh: 0
+--- !u!114 &1968461892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968461887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &1981007897
 GameObject:
   m_ObjectHideFlags: 0
@@ -10647,10 +10952,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981007899
 MonoBehaviour:
@@ -10664,7 +10969,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1981007900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10735,10 +11042,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 595, y: -175}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999159833
 MonoBehaviour:
@@ -10752,7 +11059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &1999159834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10891,6 +11200,7 @@ GameObject:
   - component: {fileID: 2055373975}
   - component: {fileID: 2055373974}
   - component: {fileID: 2055373973}
+  - component: {fileID: 2055373976}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -10968,6 +11278,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055373971}
   m_CullTransparentMesh: 0
+--- !u!114 &2055373976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055373971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &2058861865
 GameObject:
   m_ObjectHideFlags: 0
@@ -10980,6 +11310,7 @@ GameObject:
   - component: {fileID: 2058861869}
   - component: {fileID: 2058861868}
   - component: {fileID: 2058861867}
+  - component: {fileID: 2058861870}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -11057,6 +11388,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058861865}
   m_CullTransparentMesh: 0
+--- !u!114 &2058861870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058861865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adca9fb9df08cc41a7e7e100b111187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillNum: 0
+  skillData:
+    skillImage: {fileID: 0}
+    m_skillType: 0
+    skillPersentDamage: 0
+    skillDelayTime: 0
+    skillRange: {x: 0, y: 0}
+    usedMana: 0
 --- !u!1 &2065594187
 GameObject:
   m_ObjectHideFlags: 0
@@ -11091,10 +11442,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065594189
 MonoBehaviour:
@@ -11108,7 +11459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &2065594190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11286,10 +11639,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 595, y: -245}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2092486170
 MonoBehaviour:
@@ -11303,7 +11656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &2092486171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11374,10 +11729,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -105}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105926307
 MonoBehaviour:
@@ -11391,7 +11746,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &2105926308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11462,10 +11819,10 @@ RectTransform:
   m_Father: {fileID: 419571287}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 595, y: -35}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118654521
 MonoBehaviour:
@@ -11479,7 +11836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec45dfce6ee104741a1ff2f8c6d129e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketValue: 0
+  keyValue: 0
+  skillNum: 0
+  skill_sprite: {fileID: 0}
 --- !u!114 &2118654522
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    static public SkillManager instance;
     public List<SkillDatabase> skills;
 
-
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 }

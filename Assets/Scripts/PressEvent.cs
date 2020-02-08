@@ -63,9 +63,9 @@ public class PressEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 UIManager.instance.keySets[i].transform.position.y + UIManager.instance.keySets[i].GetComponent<RectTransform>().sizeDelta.y * 0.5f >= m_transform.position.y)
             {
                 Debug.Log("Snap");
+                UIManager.instance.keySets[i].GetImage(this.gameObject.GetComponent<Skill>().skillNum);
             }
             
-
         }
 
     }
