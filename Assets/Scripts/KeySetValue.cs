@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class KeySetValue : MonoBehaviour
+public class KeySetValue : MonoBehaviour,IPointerEnterHandler
 {
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log(this.gameObject.name);
+        //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+        UIManager.instance.m_NowObject = this.gameObject;
+    }
+
     public KeyCode keyValue;
 
     public int skillNum;

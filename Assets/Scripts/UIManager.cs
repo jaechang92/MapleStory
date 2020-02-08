@@ -6,21 +6,25 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     static public UIManager instance;
-
+    
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
-
     }
+    
 
     public GameObject skillUI;
     public List<GameObject> skillSets;
     private KeyCode key;
     public GameObject keyParent;
     public List<KeySetValue> keySets;
+    public GameObject m_EmptyDragObject;
+
+    [HideInInspector]
+    public GameObject m_NowObject;
 
     private void Start()
     {

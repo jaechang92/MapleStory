@@ -11,16 +11,28 @@ public class PressEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         isPress = true;
         m_v3 = m_transform.position;
         mouseToObjectDistance = Input.mousePosition - m_transform.position;
+
+        if (!this.gameObject.CompareTag("TitleBar"))
+        { 
+            UIManager.instance.m_EmptyDragObject.SetActive(true);
+            UIManager.instance.m_EmptyDragObject.GetComponent<Image>().sprite = this.gameObject.GetComponent<Image>().sprite;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         isPress = false;
-        ImageSnap();
-        if (!this.gameObject.CompareTag("TitleBar"))
+        if(!this.gameObject.CompareTag("TitleBar"))
         {
-            m_transform.position = m_v3;
+            if (UIManager.instance.m_NowObject != null)
+            {
+                ImageSnap();
+            }
+            UIManager.instance.m_EmptyDragObject.SetActive(false);
+            UIManager.instance.m_NowObject = null;
         }
+
+        
     }
 
 
@@ -35,38 +47,31 @@ public class PressEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         m_transform = this.gameObject.transform;
 
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-
-
-    }
+    
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (isPress)
         {
-            m_transform.position = Input.mousePosition - mouseToObjectDistance;
+            if (this.gameObject.CompareTag("TitleBar"))
+            {
+                this.gameObject.transform.position = Input.mousePosition - mouseToObjectDistance;
+            }
+            else
+            {
+                UIManager.instance.m_EmptyDragObject.transform.position = Input.mousePosition - mouseToObjectDistance;
+            }
         }
     }
 
     void ImageSnap()
     {
-        for (int i = 0; i < 44; i++)
-        {
-            if (UIManager.instance.keySets[i].transform.position.x - UIManager.instance.keySets[i].GetComponent<RectTransform>().sizeDelta.x * 0.5f <= m_transform.position.x &&
-                UIManager.instance.keySets[i].transform.position.x + UIManager.instance.keySets[i].GetComponent<RectTransform>().sizeDelta.x * 0.5f >= m_transform.position.x &&
-                UIManager.instance.keySets[i].transform.position.y - UIManager.instance.keySets[i].GetComponent<RectTransform>().sizeDelta.y * 0.5f <= m_transform.position.y &&
-                UIManager.instance.keySets[i].transform.position.y + UIManager.instance.keySets[i].GetComponent<RectTransform>().sizeDelta.y * 0.5f >= m_transform.position.y)
-            {
-                Debug.Log("Snap");
-                UIManager.instance.keySets[i].GetImage(this.gameObject.GetComponent<Skill>().skillNum);
-            }
-            
-        }
 
+        UIManager.instance.m_NowObject.GetComponent<KeySetValue>().GetImage(this.gameObject.GetComponent<Skill>().skillNum);
+        //UIManager.instance.keySets[i].GetImage(this.gameObject.GetComponent<Skill>().skillNum);
+            
     }
+
+    
 }
