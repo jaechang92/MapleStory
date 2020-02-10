@@ -15,7 +15,7 @@ public class KeySetValue : MonoBehaviour,IPointerEnterHandler
 
     public KeyCode keyValue;
 
-    public int skillNum;
+    public int skillNum = -1;
     public Sprite skill_sprite;
 
     private Image m_sprite;

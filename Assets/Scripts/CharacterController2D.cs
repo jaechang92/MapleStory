@@ -154,6 +154,12 @@ public class CharacterController2D : MonoBehaviour
         // {
         //      Skill.Ative;
         // }
+
+        if (UIManager.instance.keySets[i].skillNum >= 0)
+        {
+            Debug.Log("스킬" + UIManager.instance.keySets[i].skillNum + "번의 마나 =" + SkillManager.instance.skills[UIManager.instance.keySets[i].skillNum].usedMana);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
