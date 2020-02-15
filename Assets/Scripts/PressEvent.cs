@@ -57,6 +57,7 @@ public class PressEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (this.gameObject.CompareTag("TitleBar"))
             {
                 this.gameObject.transform.position = Input.mousePosition - mouseToObjectDistance;
+                UIManager.instance.InvenSorting(this.gameObject.GetComponentInParent<AtiveUI>().m_Canvas);
             }
             else
             {
@@ -67,8 +68,8 @@ public class PressEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void ImageSnap()
     {
-
-        UIManager.instance.m_NowObject.GetComponent<KeySetValue>().GetImage(this.gameObject.GetComponent<Skill>().skillNum);
+        UIManager.instance.m_NowObject.GetComponent<KeySetValue>().GetInit(this.gameObject);
+        //UIManager.instance.m_NowObject.GetComponent<KeySetValue>().GetImage(this.gameObject.GetComponent<Skill>().skillNum);
         //UIManager.instance.keySets[i].GetImage(this.gameObject.GetComponent<Skill>().skillNum);
             
     }

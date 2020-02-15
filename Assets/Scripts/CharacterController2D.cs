@@ -125,13 +125,11 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void PressKey(int key, bool isPress)
+    public void PressKey(int key)
     {
-        if (isPress)
-        {
-            Debug.Log(key);
-            Action(key);
-        }
+        Debug.Log(key);
+        Action(key);
+        
     }
 
 

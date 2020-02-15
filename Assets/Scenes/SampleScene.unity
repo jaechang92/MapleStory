@@ -188,7 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: L
 --- !u!222 &61289509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -494,6 +494,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &119894473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +695,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &132039319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,7 +845,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: N
 --- !u!222 &166889392
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -906,6 +908,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &179710408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,6 +999,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &182021977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,6 +1194,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &214035030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1285,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &226224043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,7 +1390,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: U
 --- !u!222 &237093331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1461,7 +1467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: X
 --- !u!222 &242247448
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1524,6 +1530,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &254305188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,6 +1621,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &272281385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1726,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Equals
 --- !u!222 &297279434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1795,7 +1803,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Q
 --- !u!222 &304482160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2089,6 +2097,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &380234308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,6 +2172,10 @@ MonoBehaviour:
   keySets: []
   m_EmptyDragObject: {fileID: 336094020}
   m_NowObject: {fileID: 0}
+  m_AtiveInvenSortingList: []
+  m_InvenListAll:
+  - {fileID: 1657330276}
+  - {fileID: 639871872}
 --- !u!4 &380427582
 Transform:
   m_ObjectHideFlags: 0
@@ -2245,7 +2258,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: R
 --- !u!222 &381542557
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2563,7 +2576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: BackQuote
 --- !u!222 &506541101
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2640,7 +2653,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha9
 --- !u!222 &508786741
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2896,6 +2909,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &530467296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3048,6 +3062,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &535207851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3152,7 +3167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Space
 --- !u!222 &556959730
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3339,7 +3354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: P
 --- !u!222 &587827384
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3511,7 +3526,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 613763349}
   speed: 40
-  isPress: 0
 --- !u!50 &613763347
 Rigidbody2D:
   serializedVersion: 4
@@ -3776,7 +3790,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha4
 --- !u!222 &633771900
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3796,13 +3810,14 @@ GameObject:
   - component: {fileID: 639871873}
   - component: {fileID: 639871875}
   - component: {fileID: 639871874}
+  - component: {fileID: 639871876}
   m_Layer: 5
   m_Name: KeyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &639871873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3861,6 +3876,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &639871876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639871872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee92b7e207f9f3d41ada449e7ae0e4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Canvas: {fileID: 0}
 --- !u!1 &646723264
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,6 +3943,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &646723267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4050,6 +4079,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &648238581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4154,7 +4184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: RightAlt
 --- !u!222 &679434136
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4231,7 +4261,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: G
 --- !u!222 &686571810
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4308,7 +4338,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: RightControl
 --- !u!222 &696634884
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4590,7 +4620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Y
 --- !u!222 &725743408
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4667,7 +4697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: S
 --- !u!222 &727687412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4744,7 +4774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: O
 --- !u!222 &730438475
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4821,7 +4851,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: LeftControl
 --- !u!222 &750428958
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4898,7 +4928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: LeftAlt
 --- !u!222 &754623467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4961,6 +4991,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &760354873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5124,6 +5155,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &788209136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5214,6 +5246,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &792763662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5318,7 +5351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: D
 --- !u!222 &829148291
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5535,7 +5568,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha7
 --- !u!222 &873756534
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5752,7 +5785,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha8
 --- !u!222 &927394047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5815,6 +5848,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &936105146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5919,7 +5953,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha1
 --- !u!222 &966824839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5982,6 +6016,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &980152133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6072,6 +6107,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &994341247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6176,7 +6212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha3
 --- !u!222 &1035468876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6253,7 +6289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: K
 --- !u!222 &1039607902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6316,6 +6352,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1044385278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7209,7 +7246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: W
 --- !u!222 &1295659316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7286,7 +7323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: V
 --- !u!222 &1309754372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7363,7 +7400,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: J
+  m_Text: Z
 --- !u!222 &1311832929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7440,7 +7477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: M
 --- !u!222 &1319514098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7503,6 +7540,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1337939573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7593,6 +7631,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1343221291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7683,6 +7722,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1343302459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7773,6 +7813,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1383466879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7877,7 +7918,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: C
 --- !u!222 &1407340690
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8056,7 +8097,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha2
 --- !u!222 &1445802250
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8119,6 +8160,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1464891909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8209,6 +8251,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1482981589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8299,6 +8342,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1483573092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8499,6 +8543,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1531104917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8603,7 +8648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: I
 --- !u!222 &1551951648
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8886,6 +8931,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1586647462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8976,6 +9022,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1597608228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9066,6 +9113,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1608196556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9280,7 +9328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: J
 --- !u!222 &1614023604
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9357,7 +9405,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: E
 --- !u!222 &1614794754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9454,6 +9502,7 @@ GameObject:
   - component: {fileID: 1657330277}
   - component: {fileID: 1657330279}
   - component: {fileID: 1657330278}
+  - component: {fileID: 1657330280}
   m_Layer: 5
   m_Name: SkillCanvas
   m_TagString: Untagged
@@ -9519,6 +9568,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1657330280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657330276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee92b7e207f9f3d41ada449e7ae0e4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Canvas: {fileID: 0}
 --- !u!1 &1694832908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9573,6 +9635,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1694832911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9677,7 +9740,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Minus
 --- !u!222 &1731483239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9740,6 +9803,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1759354981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9830,6 +9894,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1785463907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9934,7 +9999,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: F
 --- !u!222 &1793588881
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9997,6 +10062,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1851512688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10164,6 +10230,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1863012184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10268,7 +10335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: T
 --- !u!222 &1889848823
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10345,7 +10412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: H
 --- !u!222 &1906517443
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10762,6 +10829,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1929277943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10866,7 +10934,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha5
 --- !u!222 &1940506875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10943,7 +11011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha6
 --- !u!222 &1951045675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11006,6 +11074,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1956058276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11206,6 +11275,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1981007900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11296,6 +11366,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &1999159834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11696,6 +11767,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &2065594190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11800,7 +11872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD0A4\uC138\uD305"
+  m_Text: Alpha0
 --- !u!222 &2084530209
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11893,6 +11965,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &2092486171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11983,6 +12056,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &2105926308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12073,6 +12147,7 @@ MonoBehaviour:
   keyValue: 0
   skillNum: -1
   skill_sprite: {fileID: 0}
+  m_type: 0
 --- !u!114 &2118654522
 MonoBehaviour:
   m_ObjectHideFlags: 0
