@@ -127,7 +127,7 @@ public class CharacterController2D : MonoBehaviour
 
     public void PressKey(int key)
     {
-        Debug.Log(key);
+
         Action(key);
         
     }
@@ -153,10 +153,16 @@ public class CharacterController2D : MonoBehaviour
         //      Skill.Ative;
         // }
 
-        if (UIManager.instance.keySets[i].skillNum >= 0)
+        if (UIManager.instance.keySets[i].m_KeyAction != null)
         {
-            Debug.Log("스킬" + UIManager.instance.keySets[i].skillNum + "번의 마나 =" + SkillManager.instance.skills[UIManager.instance.keySets[i].skillNum].usedMana);
+            UIManager.instance.keySets[i].m_KeyAction.DoAction();
         }
+
+
+        //if (UIManager.instance.keySets[i].skillNum >= 0)
+        //{
+        //    Debug.Log("스킬" + UIManager.instance.keySets[i].skillNum + "번의 마나 =" + SkillManager.instance.skills[UIManager.instance.keySets[i].skillNum].usedMana);
+        //}
 
     }
 

@@ -65,7 +65,9 @@
     <Compile Include="Assets\Scripts\AtiveUI.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\KeyAction.cs" />
     <Compile Include="Assets\Scripts\KeySetValue.cs" />
+    <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PressEvent.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />

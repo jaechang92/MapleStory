@@ -44,12 +44,15 @@ public class UIManager : MonoBehaviour
     {
         key = GameManager.instance.key;
         //임시 테스트용
-        if (key == KeyCode.K)
-        {
-            Debug.Log(key);
-            //skillUI.SetActive(!skillUI.activeSelf);
-            m_InvenListAll[0].SetActive(!m_InvenListAll[0].activeSelf);
-        }
+        //if (key == KeyCode.K)
+        //{
+        //    Debug.Log(key);
+        //    //skillUI.SetActive(!skillUI.activeSelf);
+        //    m_InvenListAll[0].SetActive(!m_InvenListAll[0].activeSelf);
+        //}
+
+        
+
         //End
 
     }

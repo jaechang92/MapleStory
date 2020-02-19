@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             controller.PressKey(keyCodeValuePairs[key.ToString()]);
             GameManager.instance.isPress = false;
             
-            Debug.Log("GameManager.instance.isPress = " + GameManager.instance.isPress);
+
             GameManager.instance.key = KeyCode.None;
         }
     }

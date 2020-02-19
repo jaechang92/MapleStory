@@ -16,7 +16,7 @@ public class KeySetValue : MonoBehaviour,IPointerEnterHandler
     public KeyCode keyValue;
 
     public int skillNum = -1;
-    public Sprite skill_sprite;
+    
 
     private Image m_sprite;
     private Sprite initSprite = null;
@@ -27,25 +27,48 @@ public class KeySetValue : MonoBehaviour,IPointerEnterHandler
     }
 
     public MyType m_type;
-    
 
+    public KeyAction m_KeyAction;
 
     void Start()
     {
         m_sprite = this.GetComponent<Image>();
-        
     }
 
     public void GetInit(GameObject obj)
     {
-        if (obj.CompareTag("Skill"))
+        //if (obj.CompareTag("Skill"))
+        //{
+        //    GetImage(obj.GetComponent<Skill>().skillNum);
+        //}
+        //else if(obj.CompareTag("NotSkillUI"))
+        //{
+        //    //스킬 UI가 아닐때 인벤토리 온오프 하도록 만드는 기능
+        //}
+
+        ContainerInKeySets(m_KeyAction);
+        m_KeyAction = obj.GetComponent<KeyAction>();
+        m_sprite.sprite = obj.GetComponent<Image>().sprite;
+
+
+    }
+
+    public void ContainerInKeySets(KeyAction KayAtionScript)
+    {
+        foreach (var item in UIManager.instance.keySets)
         {
-            GetImage(obj.GetComponent<Skill>().skillNum);
+            if (item.m_KeyAction != null)
+            {
+                Debug.Log("??");
+                Debug.Log(item.m_KeyAction == KayAtionScript);
+                if (item.m_KeyAction == KayAtionScript)
+                {
+                    item.init();
+                }
+            }
         }
-        else if(obj.CompareTag("NotSkillUI"))
-        {
-            //스킬 UI가 아닐때 인벤토리 온오프 하도록 만드는 기능
-        }
+        
+
     }
 
     public void GetImage(int num)
@@ -58,15 +81,17 @@ public class KeySetValue : MonoBehaviour,IPointerEnterHandler
             }
         }
 
-        skillNum = num;
-        skill_sprite = SkillManager.instance.skills[skillNum].skillImage;
-        Debug.Log("Get");
-        m_sprite.sprite = skill_sprite;
+        //skillNum = num;
+        //skill_sprite = SkillManager.instance.skills[skillNum].skillImage;
+        //Debug.Log("Get");
+        //m_sprite.sprite = skill_sprite;
     }
 
     private void init()
     {
         m_sprite.sprite = initSprite;
         skillNum = -1;
+        m_KeyAction = null;
+        Debug.Log("초기화");
     }
 }

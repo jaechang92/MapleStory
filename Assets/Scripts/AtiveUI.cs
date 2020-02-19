@@ -18,7 +18,7 @@ public class AtiveUI : MonoBehaviour
         }
         else
         {
-            Debug.Log(UIManager.instance.m_AtiveInvenSortingList);
+
             UIManager.instance.m_AtiveInvenSortingList.Add(m_Canvas);
         }
     }
