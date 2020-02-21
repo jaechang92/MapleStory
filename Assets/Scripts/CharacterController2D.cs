@@ -12,7 +12,8 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
-    [SerializeField] public bool m_Grounded;                                   // Whether or not the player is grounded.
+    [SerializeField] public bool m_Grounded;                                    // Whether or not the player is grounded.
+    [SerializeField] private Collider2D m_ModelCollider2D;                       // My Model Collider
 
 
 
@@ -25,6 +26,7 @@ public class CharacterController2D : MonoBehaviour
     private int m_jumpCount;
 
     private GameObject nowGround;
+    public bool IsSkillAtive = false;
 
     [Header("Events")]
     [Space]
@@ -102,7 +104,7 @@ public class CharacterController2D : MonoBehaviour
 
         if (m_Grounded && jump && moveV < 0 && nowGround.layer == 10)
         {
-            this.gameObject.GetComponent<Collider2D>().enabled = false;
+            m_ModelCollider2D.enabled = false;
             
         }
         else if (m_Grounded && jump)
@@ -153,9 +155,9 @@ public class CharacterController2D : MonoBehaviour
         //      Skill.Ative;
         // }
 
-        if (UIManager.instance.keySets[i].m_KeyAction != null)
+        if (UIManager.instance.keySets[i].m_KeyAction != null && IsSkillAtive ==false)
         {
-            UIManager.instance.keySets[i].m_KeyAction.DoAction();
+            UIManager.instance.keySets[i].m_KeyAction.DoAction(this.gameObject);
         }
 
 
@@ -170,7 +172,7 @@ public class CharacterController2D : MonoBehaviour
     {
         if (collision.gameObject == nowGround)
         {
-            this.gameObject.GetComponent<Collider2D>().enabled = true;
+            m_ModelCollider2D.enabled = true;
         }
     }
 }

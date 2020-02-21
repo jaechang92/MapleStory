@@ -24,12 +24,19 @@ public class KeyAction : MonoBehaviour
     }
 
 
-    public void DoAction()
+    public void DoAction(GameObject player)
     {
         if (m_Skill != null)
         {
+            player.GetComponent<CharacterController2D>().IsSkillAtive = true;
             //스킬실행
             Debug.Log("이것은 스킬입니다.");
+            Debug.Log("이스킬의 마나 = " + m_Skill.skillData.usedMana);
+
+            GameObject skillEffect = m_Skill.skillData.skillEffect;
+            skillEffect.transform.parent = player.transform;
+            skillEffect.SetActive(true);
+            
         }
         else
         {

@@ -57,12 +57,12 @@ public class PressEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (this.gameObject.CompareTag("TitleBar"))
             {
                 this.gameObject.transform.position = Input.mousePosition - mouseToObjectDistance;
-                UIManager.instance.InvenSorting(this.gameObject.GetComponentInParent<AtiveUI>().m_Canvas);
             }
             else
             {
                 UIManager.instance.m_EmptyDragObject.transform.position = Input.mousePosition - mouseToObjectDistance;
             }
+            UIManager.instance.InvenSorting(this.gameObject.GetComponentInParent<AtiveUI>().m_Canvas);
         }
     }
 

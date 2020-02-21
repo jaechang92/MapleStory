@@ -14,4 +14,6 @@ public class SkillManager : MonoBehaviour
             instance = this;
         }
     }
+    
+
 }

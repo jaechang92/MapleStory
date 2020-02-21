@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Note
 {
-    //KeySetValue의 63번째줄 작업중
+    // UI캔버스 소팅작업중
 }

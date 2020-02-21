@@ -16,6 +16,8 @@ public class SkillDatabase
     public float skillDelayTime;
     public Vector2 skillRange = new Vector2();
     public float usedMana;
+    public GameObject skillEffect;
+    
 
 
 }

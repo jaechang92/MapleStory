@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
                                     KeyCode.Minus,KeyCode.Equals,KeyCode.BackQuote , KeyCode.LeftShift, KeyCode.RightShift, KeyCode.Backslash};
 
     public KeyCode key;
-
+    public CharacterController2D m_CharacterController2D;
 
     private void Update()
     {
