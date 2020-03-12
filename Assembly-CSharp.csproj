@@ -64,7 +64,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AtiveUI.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+    <Compile Include="Assets\Scripts\CreateSystem.cs" />
     <Compile Include="Assets\Scripts\EffectController.cs" />
+    <Compile Include="Assets\Scripts\EnemyController2D.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\KeyAction.cs" />
     <Compile Include="Assets\Scripts\KeySetValue.cs" />

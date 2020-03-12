@@ -20,6 +20,7 @@ public class AtiveUI : MonoBehaviour
         {
 
             UIManager.instance.m_AtiveInvenSortingList.Add(m_Canvas);
+            UIManager.instance.InvenSorting(m_Canvas);
         }
     }
 

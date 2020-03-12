@@ -35,6 +35,13 @@ public class GameManager : MonoBehaviour
     public KeyCode key;
     public CharacterController2D m_CharacterController2D;
 
+    public enum MapEnum
+    {
+        Stage1,Stage2
+    }
+
+    public MapEnum m_Mapname;
+
     private void Update()
     {
         _isPress = isPress;
