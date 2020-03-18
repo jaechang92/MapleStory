@@ -70,10 +70,13 @@ public class CharacterController2D : MonoBehaviour
                 if (nowGround != colliders[i].gameObject)
                 {
                     nowGround = colliders[i].gameObject;
-                    
+
                 }
+
                 if (!wasGrounded)
+                {
                     OnLandEvent.Invoke();
+                }
             }
         }
     }

@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         Stage1,Stage2
     }
 
-    public MapEnum m_Mapname;
+    public MapEnum m_Mapname = MapEnum.Stage1;
 
     private void Update()
     {

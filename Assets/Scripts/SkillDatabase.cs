@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SkillDatabase
 {
 
-
+    public string skillName;
     public Sprite skillImage;
     public enum skillType { Ative,Passive };
     public skillType m_skillType;

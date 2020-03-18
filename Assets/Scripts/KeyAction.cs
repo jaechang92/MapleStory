@@ -33,10 +33,18 @@ public class KeyAction : MonoBehaviour
             Debug.Log("이것은 스킬입니다.");
             Debug.Log("이스킬의 마나 = " + m_Skill.skillData.usedMana);
 
+            // 이펙트 생성 
             GameObject skillEffect = m_Skill.skillData.skillEffect;
             skillEffect.transform.parent = player.transform;
-            skillEffect.SetActive(true);
             
+            // 애니메이션 실행
+            skillEffect.SetActive(true);
+
+
+            
+            //Instantiate(m_Skill.skillData.skillEffect, player.transform);
+
+
         }
         else
         {
