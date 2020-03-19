@@ -178,4 +178,6 @@ public class CharacterController2D : MonoBehaviour
             m_ModelCollider2D.enabled = true;
         }
     }
+
+
 }

@@ -8,6 +8,8 @@ public class EnemyController2D : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
 
     private GameManager.MapEnum MapEnum;
+    [SerializeField]
+    private LayerMask targetMask;
     private void Awake()
     {
         m_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -85,6 +87,7 @@ public class EnemyController2D : MonoBehaviour
         if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.attackRange)
         {
             state = EnemyState.Attack;
+            Attack();
         }
         else if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.trackingRange)
         {
@@ -139,9 +142,9 @@ public class EnemyController2D : MonoBehaviour
         //{
         //    isGrounded = true;
         //}
-        
-        //isGrounded
 
+        //isGrounded
+        Debug.DrawRay(Vector2.up * 0.5f + transform.position.y * Vector2.up + Vector2.left * m_EnemyInfo.attackRange + transform.position.x * Vector2.right, Vector2.right * m_EnemyInfo.attackRange,Color.red);
         Move();
     }
 
@@ -174,6 +177,19 @@ public class EnemyController2D : MonoBehaviour
         randomTime = Random.Range(time1, time2);
         
     }
+
+    private void Attack()
+    {
+        Collider2D[] colliders = Physics2D.OverlapAreaAll(Vector2.up*0.5f + Vector2.left * m_EnemyInfo.attackRange,Vector2.right * m_EnemyInfo.attackRange, targetMask);
+        
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Debug.Log(colliders[i].name);
+        }
+        Debug.Log(colliders.Length);
+        //Debug.Log(this.gameObject.transform.localScale.x * -1 * Vector2.right);
+    }
+
 
 
     private void init()

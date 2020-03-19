@@ -10,6 +10,8 @@ public class Note
     /// 랜덤하게 움직이고 완성
     /// 추적하는 시스템 작성시작해야됨
     /// 추적 완성
+    /// EnemyController2D의 attack 구현중 
+    /// 
     ///
     /// 처음 위치 저장 vector2(x,y)
     ///
@@ -27,5 +29,5 @@ public class Note
     ///
 
 
-    
+
 }
