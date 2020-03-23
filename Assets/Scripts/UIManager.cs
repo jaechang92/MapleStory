@@ -31,13 +31,23 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> m_InvenListAll;
+
+    public GameObject visibleObject;
+    private Text visibleObjectInText;
+
+    private List<string> m_texts;
+    private NPCController nowNPC;
     private void Start()
     {
         foreach (var item in keyParent.GetComponentsInChildren<KeySetValue>())
         {
             keySets.Add(item);
         }
-        
+
+        visibleObjectInText = visibleObject.GetComponentInChildren<Text>();
+
+
+
     }
 
     private void Update()
@@ -107,4 +117,34 @@ public class UIManager : MonoBehaviour
             i++;
         }
     }
+
+
+    private int textCount = 0;
+    public void GetText(List<string> texts,NPCController nPCController)
+    {
+        m_texts = texts;
+        visibleObject.SetActive(true);
+        NextText();
+        nowNPC = nPCController;
+    }
+
+
+    public void NextText()
+    {
+        if (textCount < m_texts.Count)
+        {
+            visibleObjectInText.text = m_texts[textCount];
+        }
+        else
+        {
+            visibleObject.SetActive(false);
+            textCount = 0;
+            nowNPC.questNum++;
+            return;
+        }
+        textCount++;
+        Debug.Log(textCount);
+    }
+
+
 }

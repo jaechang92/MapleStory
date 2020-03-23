@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 using System.Collections.Generic;
 
 public class CharacterController2D : MonoBehaviour
@@ -14,8 +15,8 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
     [SerializeField] public bool m_Grounded;                                    // Whether or not the player is grounded.
     [SerializeField] private Collider2D m_ModelCollider2D;                       // My Model Collider
-
-
+    [SerializeField] private float dubleClickDelayTime = 0.5f;
+    [SerializeField] private bool isDubleClick = false;
 
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -24,6 +25,8 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
     [SerializeField] private int m_InitJumpCount = 1;
     private int m_jumpCount;
+
+
 
     private GameObject nowGround;
     public bool IsSkillAtive = false;
@@ -39,6 +42,27 @@ public class CharacterController2D : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+    [System.Serializable]
+    public struct PlayerInfo
+    {
+        public int hp;
+
+        public int stateDamagePoint;
+
+        public int defens;
+        public int exp;
+
+        public float nonHitTime;
+
+    }
+
+
+    public PlayerInfo m_playerInfo;
+    private float currentHitTime;
+    public bool isHit = false;
+
+
+    private SpriteRenderer spriteRenderer;
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -48,7 +72,44 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
-        
+
+        spriteRenderer = m_ModelCollider2D.gameObject.GetComponent<SpriteRenderer>();
+
+    }
+    
+    private float currentDelayTime;
+    private void Update()
+    {
+        currentHitTime -= Time.deltaTime;
+        if (currentHitTime < 0)
+        {
+            isHit = true;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            if (isDubleClick)
+            {
+                OnClick();
+                isDubleClick = false;
+                return;
+            }
+
+            isDubleClick = true;
+        }
+
+        if (isDubleClick)
+        {
+            currentDelayTime += Time.deltaTime;
+            if (currentDelayTime >= dubleClickDelayTime)
+            {
+                currentDelayTime = 0;
+                isDubleClick = false;
+            }
+        }
+
+
 
 
     }
@@ -82,9 +143,9 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void Move(float moveH,float moveV, bool jump)
+    public void Move(float moveH, float moveV, bool jump)
     {
-        
+
         if (m_Grounded || m_AirControl)
         {
             // Move the character by finding the target velocity
@@ -101,14 +162,14 @@ public class CharacterController2D : MonoBehaviour
                 Flip();
             }
 
-            
+
         }
 
 
         if (m_Grounded && jump && moveV < 0 && nowGround.layer == 10)
         {
             m_ModelCollider2D.enabled = false;
-            
+
         }
         else if (m_Grounded && jump)
         {
@@ -121,7 +182,7 @@ public class CharacterController2D : MonoBehaviour
 
         if (!m_Grounded && jump)
         {
-            if (m_jumpCount>0)
+            if (m_jumpCount > 0)
             {
                 m_jumpCount--;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
@@ -134,7 +195,7 @@ public class CharacterController2D : MonoBehaviour
     {
 
         Action(key);
-        
+
     }
 
 
@@ -158,7 +219,7 @@ public class CharacterController2D : MonoBehaviour
         //      Skill.Ative;
         // }
 
-        if (UIManager.instance.keySets[i].m_KeyAction != null && IsSkillAtive ==false)
+        if (UIManager.instance.keySets[i].m_KeyAction != null && IsSkillAtive == false)
         {
             UIManager.instance.keySets[i].m_KeyAction.DoAction(this.gameObject);
         }
@@ -176,6 +237,61 @@ public class CharacterController2D : MonoBehaviour
         if (collision.gameObject == nowGround)
         {
             m_ModelCollider2D.enabled = true;
+        }
+    }
+
+    public void Hit(int damage)
+    {
+        if (isHit)
+        {
+            m_playerInfo.hp -= damage;
+            if (m_playerInfo.hp <= 0)
+            {
+                m_playerInfo.hp = 0;
+            }
+
+            StartCoroutine(DoTwinkle());
+
+            currentHitTime = m_playerInfo.nonHitTime;
+            isHit = false;
+
+        }
+    }
+
+
+
+
+
+    float persent = -0.1f;
+    private IEnumerator DoTwinkle()
+    {
+        int i = 0;
+        while (i < 4)
+        {
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, spriteRenderer.color.a + persent);
+            if (spriteRenderer.color.a >= 1 || spriteRenderer.color.a <= 0.5f)
+            {
+                persent = -persent;
+                i++;
+            }
+            Debug.Log(spriteRenderer.color.a);
+            yield return null;
+        }
+    }
+
+
+    public void OnClick()
+    {
+        
+        Vector2 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector3.forward, 0.1f, 1 << 12);
+        
+
+        if (hit)
+        {
+            hit.transform.GetComponent<NPCController>().Talk();
         }
     }
 

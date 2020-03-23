@@ -67,10 +67,12 @@
     <Compile Include="Assets\Scripts\CreateSystem.cs" />
     <Compile Include="Assets\Scripts\EffectController.cs" />
     <Compile Include="Assets\Scripts\EnemyController2D.cs" />
+    <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\KeyAction.cs" />
     <Compile Include="Assets\Scripts\KeySetValue.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
+    <Compile Include="Assets\Scripts\NPCController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PressEvent.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />

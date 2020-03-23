@@ -61,6 +61,8 @@ public class EnemyController2D : MonoBehaviour
         public int attackRange;
         public int defens;
         public int exp;
+
+        public float attackDelay;
     }
 
     public EnemyInfo m_EnemyInfo;
@@ -70,6 +72,9 @@ public class EnemyController2D : MonoBehaviour
     public bool m_FacingRight = false;  // For determining which way the player is currently facing.
     private float currentTime = 0.0f;
     private float randomTime = 0;
+
+    private float currentAttackDelay;
+
 
     private Transform myTr;
     public Transform targetTr;
@@ -84,10 +89,18 @@ public class EnemyController2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentAttackDelay -= Time.deltaTime;
+
         if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.attackRange)
         {
             state = EnemyState.Attack;
-            Attack();
+
+            if (currentAttackDelay < 0)
+            {
+                Attack();
+            }
+
+            
         }
         else if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.trackingRange)
         {
@@ -180,14 +193,8 @@ public class EnemyController2D : MonoBehaviour
 
     private void Attack()
     {
-        Collider2D[] colliders = Physics2D.OverlapAreaAll(Vector2.up*0.5f + Vector2.left * m_EnemyInfo.attackRange,Vector2.right * m_EnemyInfo.attackRange, targetMask);
-        
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            Debug.Log(colliders[i].name);
-        }
-        Debug.Log(colliders.Length);
-        //Debug.Log(this.gameObject.transform.localScale.x * -1 * Vector2.right);
+        GameManager.instance.m_CharacterController2D.Hit(m_EnemyInfo.attackDamage);
+        currentAttackDelay = m_EnemyInfo.attackDelay;
     }
 
 
@@ -196,5 +203,5 @@ public class EnemyController2D : MonoBehaviour
     {
 
     }
-
+    
 }
