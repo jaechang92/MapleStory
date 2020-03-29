@@ -26,6 +26,9 @@ public class Note
     /// 전투 피격판정
     /// 상세스텟
     /// 
+    /// 
+    /// 
+    /// 0329 캐릭터 lV설정중 charactercontroller2D enum lv중
     ///
 
 

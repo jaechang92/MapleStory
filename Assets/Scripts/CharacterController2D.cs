@@ -45,6 +45,7 @@ public class CharacterController2D : MonoBehaviour
     [System.Serializable]
     public struct PlayerInfo
     {
+        public int lv;
         public int hp;
 
         public int stateDamagePoint;
