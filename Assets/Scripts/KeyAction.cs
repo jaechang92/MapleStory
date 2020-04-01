@@ -32,6 +32,7 @@ public class KeyAction : MonoBehaviour
             //스킬실행
             Debug.Log("이것은 스킬입니다.");
             Debug.Log("이스킬의 마나 = " + m_Skill.skillData.usedMana);
+            Debug.Log("이스킬의 이름 = " + m_Skill.skillData.skillName);
 
             // 이펙트 생성 
             GameObject skillEffect = m_Skill.skillData.skillEffect;
@@ -52,4 +53,5 @@ public class KeyAction : MonoBehaviour
         }
     }
 
+    
 }

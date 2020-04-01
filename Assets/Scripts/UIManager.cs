@@ -16,13 +16,15 @@ public class UIManager : MonoBehaviour
         m_AtiveInvenSortingList = new List<Canvas>();
     }
     
-
+    // 퍼블릭 변수
     public GameObject skillUI;
     public List<GameObject> skillSets;
-    private KeyCode key;
     public GameObject keyParent;
     public List<KeySetValue> keySets;
     public GameObject m_EmptyDragObject;
+    public GameObject visibleObject;
+    public Image expImage;
+
 
     [HideInInspector]
     public GameObject m_NowObject;
@@ -32,7 +34,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> m_InvenListAll;
 
-    public GameObject visibleObject;
+    private KeyCode key;
     private Text visibleObjectInText;
 
     private List<string> m_texts;
@@ -46,6 +48,10 @@ public class UIManager : MonoBehaviour
 
         visibleObjectInText = visibleObject.GetComponentInChildren<Text>();
 
+        foreach (var item in m_InvenListAll)
+        {
+            item.SetActive(false);
+        }
 
 
     }
@@ -144,6 +150,11 @@ public class UIManager : MonoBehaviour
         }
         textCount++;
         Debug.Log(textCount);
+    }
+
+    public void UpdateExp(int nowExp, int maxExp)
+    {
+        expImage.fillAmount = nowExp / maxExp;
     }
 
 

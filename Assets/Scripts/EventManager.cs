@@ -16,9 +16,6 @@ public class EventManager : MonoBehaviour
     }
     
 
-    
-
-
     void Start()
     {
     }

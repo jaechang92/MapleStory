@@ -80,6 +80,9 @@ public class EnemyController2D : MonoBehaviour
     public Transform targetTr;
     private bool trackingOnOff;
 
+    [SerializeField]
+    private Transform m_GroundCheck;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -157,6 +160,8 @@ public class EnemyController2D : MonoBehaviour
         //}
 
         //isGrounded
+        
+
         Debug.DrawRay(Vector2.up * 0.5f + transform.position.y * Vector2.up + Vector2.left * m_EnemyInfo.attackRange + transform.position.x * Vector2.right, Vector2.right * m_EnemyInfo.attackRange,Color.red);
         Move();
     }
@@ -197,7 +202,22 @@ public class EnemyController2D : MonoBehaviour
         currentAttackDelay = m_EnemyInfo.attackDelay;
     }
 
+    private void Attacked(int damage)
+    {
+        m_EnemyInfo.hp -= damage;
+        Debug.Log("데미지");
+        if (m_EnemyInfo.hp <= 0)
+        {
+            IsDie();
+        }
+    }
 
+    private void IsDie()
+    {
+        Debug.Log("죽음");
+        this.gameObject.SetActive(false);
+    }
+    
 
     private void init()
     {

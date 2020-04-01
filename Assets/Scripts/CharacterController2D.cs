@@ -52,7 +52,7 @@ public class CharacterController2D : MonoBehaviour
 
         public int defens;
         public int exp;
-
+        public int maxExp;
         public float nonHitTime;
 
     }
@@ -64,6 +64,13 @@ public class CharacterController2D : MonoBehaviour
 
 
     private SpriteRenderer spriteRenderer;
+
+
+
+
+    //test
+    private int pressSkillNum;
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -75,7 +82,7 @@ public class CharacterController2D : MonoBehaviour
             OnCrouchEvent = new BoolEvent();
 
         spriteRenderer = m_ModelCollider2D.gameObject.GetComponent<SpriteRenderer>();
-
+        CharaterInit();
     }
     
     private float currentDelayTime;
@@ -223,6 +230,7 @@ public class CharacterController2D : MonoBehaviour
         if (UIManager.instance.keySets[i].m_KeyAction != null && IsSkillAtive == false)
         {
             UIManager.instance.keySets[i].m_KeyAction.DoAction(this.gameObject);
+            pressSkillNum = i;
         }
 
 
@@ -275,7 +283,7 @@ public class CharacterController2D : MonoBehaviour
                 persent = -persent;
                 i++;
             }
-            Debug.Log(spriteRenderer.color.a);
+            //Debug.Log(spriteRenderer.color.a);
             yield return null;
         }
     }
@@ -296,5 +304,51 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
+    private void CharaterInit()
+    {
+        m_playerInfo.lv = 1;
+        m_playerInfo.maxExp = m_playerInfo.lv * 150;
+    }
+
+    public void GetExp(int monsterExp)
+    {
+        m_playerInfo.exp += monsterExp;
+        UIManager.instance.UpdateExp(m_playerInfo.exp, m_playerInfo.maxExp);
+
+        if (m_playerInfo.exp >= m_playerInfo.maxExp)
+        {
+            m_playerInfo.lv++;
+            m_playerInfo.maxExp = m_playerInfo.maxExp * 2;
+            m_playerInfo.exp = 0;
+            Debug.Log(m_playerInfo.maxExp);
+        }
+
+    }
+
+
+    public void HitCheck()
+    {
+        Ray2D ray = new Ray2D(this.gameObject.transform.position, Vector2.right * this.gameObject.transform.localScale.x);
+
+        RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.skillRange.x, 1 << 11);
+        if (hit != null)
+        {
+            if (UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.isMulti)
+            {
+                foreach (var item in hit)
+                {
+                    item.collider.SendMessage("Attacked", m_playerInfo.stateDamagePoint, SendMessageOptions.DontRequireReceiver);
+                }
+            }
+            else
+            {
+                hit[0].collider.SendMessage("Attacked", m_playerInfo.stateDamagePoint, SendMessageOptions.DontRequireReceiver);
+            }
+        }
+
+
+
+        //UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.skillRange
+    }
 
 }

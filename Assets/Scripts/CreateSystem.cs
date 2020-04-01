@@ -76,10 +76,11 @@ public class CreateSystem : MonoBehaviour
                 if (objectPool.Count == 0)
                 {
                     GameObject obj = Instantiate(createOriginObject, this.gameObject.transform);
-                    objectPool.Add(obj);
+                    //objectPool.Add(obj);
+                    
                 }
 
-                objectPool[0].SetActive(true);
+                //objectPool[0].SetActive(true);
                 
                 yield return waitTime;
             }
@@ -101,6 +102,7 @@ public class CreateSystem : MonoBehaviour
     {
         ativeList.Add(obj);
         objectPool.Remove(obj);
+        Debug.Log("?????????????????????");
     }
 
 }

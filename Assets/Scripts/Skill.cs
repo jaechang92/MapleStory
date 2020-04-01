@@ -8,9 +8,15 @@ public class Skill : MonoBehaviour
 
     public SkillDatabase skillData;
 
-    private void Start()
+    private void Awake()
     {
         skillData = SkillManager.instance.skills[skillNum];
+        
+    }
+
+
+    private void Start()
+    {
     }
 
 }
