@@ -29,6 +29,7 @@ public class Note
     /// 
     /// 
     /// 0329 캐릭터 lV설정중 charactercontroller2D enum lv중
+    /// 0402 CharacterController2D의 HitCheck 352번째줄 공격할때 hit의 outofRangeException 문제
     ///
 
 

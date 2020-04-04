@@ -57,10 +57,15 @@ public class NPCController : MonoBehaviour
                 /// 퀘스트를 받은후
                 ///
 
+                ///
+                /// 퀘스트 옵저버 구현
+                ///
+                
+
+
                 if (questNum < textLists.Count)
                 {
-
-                UIManager.instance.GetText(textLists[questNum].stringList,this.gameObject.GetComponent<NPCController>());
+                    UIManager.instance.GetText(textLists[questNum].stringList, this.gameObject.GetComponent<NPCController>());
                 }
 
                 //questNum++;

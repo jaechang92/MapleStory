@@ -53,5 +53,17 @@ public class KeyAction : MonoBehaviour
         }
     }
 
+    public bool IsMoveCantroller()
+    {
+        if (m_Skill != null)
+        {
+            return m_Skill.skillData.canMove;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
     
 }

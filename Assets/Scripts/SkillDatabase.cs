@@ -17,7 +17,8 @@ public class SkillDatabase
     public Vector2 skillRange = new Vector2();
     public float usedMana;
     public GameObject skillEffect;
-    public bool isMulti;
+    public bool isMulti, canMove;
+    
 
 
 }

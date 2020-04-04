@@ -57,8 +57,13 @@ public class CharacterController2D : MonoBehaviour
 
     }
 
+    public enum CanMove
+    {
+        move, stop
+    }
 
     public PlayerInfo m_playerInfo;
+    public CanMove m_isMove;
     private float currentHitTime;
     public bool isHit = false;
 
@@ -201,8 +206,10 @@ public class CharacterController2D : MonoBehaviour
 
     public void PressKey(int key)
     {
-
-        Action(key);
+        if (m_isMove == CanMove.move)
+        {
+            Action(key);
+        }
 
     }
 
@@ -231,6 +238,17 @@ public class CharacterController2D : MonoBehaviour
         {
             UIManager.instance.keySets[i].m_KeyAction.DoAction(this.gameObject);
             pressSkillNum = i;
+
+            if (UIManager.instance.keySets[i].m_KeyAction.IsMoveCantroller())
+            {
+                m_isMove = CanMove.move;
+            }
+            else
+            {
+                m_isMove = CanMove.stop;
+            }
+
+
         }
 
 
@@ -333,6 +351,11 @@ public class CharacterController2D : MonoBehaviour
         RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.skillRange.x, 1 << 11);
         if (hit != null)
         {
+            foreach (var item in hit)
+            {
+                Debug.Log(item.collider.name);
+            }
+
             if (UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.isMulti)
             {
                 foreach (var item in hit)
@@ -342,6 +365,7 @@ public class CharacterController2D : MonoBehaviour
             }
             else
             {
+                
                 hit[0].collider.SendMessage("Attacked", m_playerInfo.stateDamagePoint, SendMessageOptions.DontRequireReceiver);
             }
         }

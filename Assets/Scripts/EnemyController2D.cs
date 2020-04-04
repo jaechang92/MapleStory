@@ -12,7 +12,7 @@ public class EnemyController2D : MonoBehaviour
     private LayerMask targetMask;
     private void Awake()
     {
-        m_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        m_spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         Debug.Log(GameManager.instance);
         MapEnum = GameManager.instance.m_Mapname;
@@ -39,7 +39,7 @@ public class EnemyController2D : MonoBehaviour
 
     public enum EnemyState
     {
-        NomalMove, Tracking , Attack
+        NomalMove, Tracking , Attack , ATKMode
     }
 
 
@@ -68,7 +68,7 @@ public class EnemyController2D : MonoBehaviour
     public EnemyInfo m_EnemyInfo;
 
 
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     public bool m_FacingRight = false;  // For determining which way the player is currently facing.
     private float currentTime = 0.0f;
     private float randomTime = 0;
@@ -79,71 +79,24 @@ public class EnemyController2D : MonoBehaviour
     private Transform myTr;
     public Transform targetTr;
     private bool trackingOnOff;
-
+    
     [SerializeField]
     private Transform m_GroundCheck;
+    [SerializeField]
+    private float jumpPower;
+    private bool isJumped;
 
     // Start is called before the first frame update
     void Start()
     {
         myTr = GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentAttackDelay -= Time.deltaTime;
-
-        if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.attackRange)
-        {
-            state = EnemyState.Attack;
-
-            if (currentAttackDelay < 0)
-            {
-                Attack();
-            }
-
-            
-        }
-        else if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.trackingRange)
-        {
-            state = EnemyState.Tracking;
-        }
-        else
-        {
-            state = EnemyState.NomalMove;
-        }
-
-
-        // m_FacingRight 가 참이면 moveSpeed 는 양수 거짓이면 음수
-        moveSpeed = m_FacingRight ? 1 : -1;
-        if (EnemyState.NomalMove == state)
-        {
-            currentTime += Time.deltaTime;
-            if (currentTime > randomTime)
-            {
-                currentTime = 0;
-                RandomForTime(rTime.x, rTime.y);
-                Flip();
-            }
-        }
-        else if(EnemyState.Tracking == state)
-        {
-            if (myTr.position.x - targetTr.position.x < 0 && !m_FacingRight 
-                || myTr.position.x - targetTr.position.x > 0 && m_FacingRight)
-            {
-                Flip();
-            }
-        }
-        else if(EnemyState.Attack == state)
-        {
-            moveSpeed = 0;
-            if (myTr.position.x - targetTr.position.x < 0 && !m_FacingRight
-                || myTr.position.x - targetTr.position.x > 0 && m_FacingRight)
-            {
-                Flip();
-            }
-        }
+        
 
 
     }
@@ -152,24 +105,32 @@ public class EnemyController2D : MonoBehaviour
     // 1<< 1 = 10  / 1 << 2 = 100
     private void FixedUpdate()
     {
-        //Collider2D[] colliders = Physics2D.OverlapCircleAll(this.gameObject.transform.position, 0.2f, 1 << 9);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, 0.2f, (1 << 9) + (1 << 10));
 
-        //for (int i = 0; i < colliders.Length; i++)
-        //{
-        //    isGrounded = true;
-        //}
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            isGrounded = true;
+        }
 
         //isGrounded
-        
 
-        Debug.DrawRay(Vector2.up * 0.5f + transform.position.y * Vector2.up + Vector2.left * m_EnemyInfo.attackRange + transform.position.x * Vector2.right, Vector2.right * m_EnemyInfo.attackRange,Color.red);
-        Move();
+
+        //Debug.DrawRay(Vector2.up * 0.5f + transform.position.y * Vector2.up + Vector2.left * m_EnemyInfo.attackRange + transform.position.x * Vector2.right, Vector2.right * m_EnemyInfo.attackRange,Color.red);
+        //Move();
+        FSM2();
+
     }
 
 
     private void Move()
     {
         m_rigidbody2D.velocity = new Vector2(moveSpeed, m_rigidbody2D.velocity.y);
+        if (isGrounded == true && isJumped == true)
+        {
+            m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, jumpPower);
+            isGrounded = false;
+        }
+
     }
 
     private void Flip()
@@ -204,6 +165,7 @@ public class EnemyController2D : MonoBehaviour
 
     private void Attacked(int damage)
     {
+        state = EnemyState.ATKMode;
         m_EnemyInfo.hp -= damage;
         Debug.Log("데미지");
         if (m_EnemyInfo.hp <= 0)
@@ -218,6 +180,109 @@ public class EnemyController2D : MonoBehaviour
         this.gameObject.SetActive(false);
     }
     
+    private void FSM()
+    {
+        currentAttackDelay -= Time.deltaTime;
+
+        if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.attackRange)
+        {
+            state = EnemyState.Attack;
+
+            if (currentAttackDelay < 0)
+            {
+                Attack();
+            }
+
+
+        }
+        else if (Mathf.Abs(myTr.position.x - targetTr.position.x) <= m_EnemyInfo.trackingRange)
+        {
+            state = EnemyState.Tracking;
+        }
+        else
+        {
+            state = EnemyState.NomalMove;
+        }
+
+
+        // m_FacingRight 가 참이면 moveSpeed 는 양수 거짓이면 음수
+        moveSpeed = m_FacingRight ? 1 : -1;
+        if (EnemyState.NomalMove == state)
+        {
+            currentTime += Time.deltaTime;
+            if (currentTime > randomTime)
+            {
+                currentTime = 0;
+                RandomForTime(rTime.x, rTime.y);
+                Flip();
+            }
+        }
+        else if (EnemyState.Tracking == state)
+        {
+            if (myTr.position.x - targetTr.position.x < 0 && !m_FacingRight
+                || myTr.position.x - targetTr.position.x > 0 && m_FacingRight)
+            {
+                Flip();
+            }
+        }
+        else if (EnemyState.Attack == state)
+        {
+            moveSpeed = 0;
+            if (myTr.position.x - targetTr.position.x < 0 && !m_FacingRight
+                || myTr.position.x - targetTr.position.x > 0 && m_FacingRight)
+            {
+                Flip();
+            }
+        }
+    }
+
+
+    private void FSM2()
+    {
+        if (state == EnemyState.ATKMode)
+        {
+            Vector2 dir = myTr.position - targetTr.position;
+            float distance = Vector2.Distance(myTr.position, targetTr.position);
+            if (distance > m_EnemyInfo.trackingRange)
+            {
+                
+                if ((dir.x < 0 && myTr.localScale.x > 0) ||
+                    (dir.x > 0 && myTr.localScale.x < 0))
+                {
+                    Flip();
+                }
+            }
+            else if (distance < m_EnemyInfo.trackingRange)
+            {
+                Attack();
+            }
+        }
+        else if(state == EnemyState.NomalMove)
+        {
+            currentTime += Time.deltaTime;
+            if (currentTime > randomTime)
+            {
+                currentTime = 0;
+                RandomForTime(rTime.x, rTime.y);
+                Flip();
+
+                int rBool = Random.Range(0, 2);
+                if (rBool == 0)
+                {
+                    //idle
+                    moveSpeed = 0;
+                    isJumped = false;
+                }
+                else
+                {
+                    moveSpeed = -myTr.localScale.x;
+                    isJumped = true;
+                }
+            }
+        }
+        Move();
+    }
+
 
     private void init()
     {
