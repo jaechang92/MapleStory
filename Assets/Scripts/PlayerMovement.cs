@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private KeyCode key;
     private Dictionary<string, int> keyCodeValuePairs;
-    
+    public bool stopBool = false;
 
     void Start()
     {
@@ -48,8 +48,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, VerticalMove * Time.fixedDeltaTime, jump);
-        jump = false;
+        if (stopBool == false)
+        {
+            controller.Move(horizontalMove * Time.fixedDeltaTime, VerticalMove * Time.fixedDeltaTime, jump);
+            jump = false;
+        }
         
         if (key != KeyCode.None && GameManager.instance.isPress)
         {

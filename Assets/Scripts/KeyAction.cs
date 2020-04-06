@@ -36,13 +36,14 @@ public class KeyAction : MonoBehaviour
 
             // 이펙트 생성 
             GameObject skillEffect = m_Skill.skillData.skillEffect;
+
+            
             skillEffect.transform.parent = player.transform;
             
             // 애니메이션 실행
             skillEffect.SetActive(true);
 
-
-            
+            player.GetComponent<PlayerMovement>().stopBool = true;
             //Instantiate(m_Skill.skillData.skillEffect, player.transform);
 
 

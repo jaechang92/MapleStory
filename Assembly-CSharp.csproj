@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\KeyAction.cs" />
     <Compile Include="Assets\Scripts\KeySetValue.cs" />
+    <Compile Include="Assets\Scripts\MonsterData.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\NPCController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />

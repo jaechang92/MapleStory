@@ -153,6 +153,9 @@ public class CharacterController2D : MonoBehaviour
                 }
             }
         }
+
+
+        HitTest();
     }
 
 
@@ -314,7 +317,7 @@ public class CharacterController2D : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector3.forward, 0.1f, 1 << 12);
-        
+        Debug.Log(LayerMask.LayerToName(1 << 12));
 
         if (hit)
         {
@@ -342,31 +345,38 @@ public class CharacterController2D : MonoBehaviour
         }
 
     }
+    public void HitTest()
+    {
+        //Ray2D ray = new Ray2D(this.gameObject.transform.position, Vector2.right * this.gameObject.transform.localScale.x);
 
+        //RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, 3);
+        //Debug.DrawRay(ray.origin, ray.direction, Color.red, 2.0f);
+    }
 
     public void HitCheck()
     {
         Ray2D ray = new Ray2D(this.gameObject.transform.position, Vector2.right * this.gameObject.transform.localScale.x);
 
-        RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.skillRange.x, 1 << 11);
-        if (hit != null)
+        RaycastHit2D[] hits;
+        hits = Physics2D.RaycastAll(ray.origin, ray.direction, UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.skillRange.x,1 << 11);
+        
+        if (hits.Length > 0)
         {
-            foreach (var item in hit)
+            foreach (var item in hits)
             {
                 Debug.Log(item.collider.name);
             }
-
+            Debug.Log(hits[0].collider.name);
             if (UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.isMulti)
             {
-                foreach (var item in hit)
+                foreach (var item in hits)
                 {
                     item.collider.SendMessage("Attacked", m_playerInfo.stateDamagePoint, SendMessageOptions.DontRequireReceiver);
                 }
             }
             else
             {
-                
-                hit[0].collider.SendMessage("Attacked", m_playerInfo.stateDamagePoint, SendMessageOptions.DontRequireReceiver);
+                hits[0].collider.SendMessage("Attacked", m_playerInfo.stateDamagePoint, SendMessageOptions.DontRequireReceiver);
             }
         }
 
@@ -374,5 +384,8 @@ public class CharacterController2D : MonoBehaviour
 
         //UIManager.instance.keySets[pressSkillNum].m_KeyAction.m_Skill.skillData.skillRange
     }
+
+
+
 
 }

@@ -13,6 +13,7 @@ public class EffectController : MonoBehaviour
 
         GameManager.instance.m_CharacterController2D.HitCheck();
         GameManager.instance.m_CharacterController2D.m_isMove = CharacterController2D.CanMove.move;
+        GameManager.instance.m_CharacterController2D.transform.GetComponent<PlayerMovement>().stopBool = false;
     }
     
 }
