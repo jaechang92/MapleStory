@@ -55,6 +55,7 @@ public class EnemyController2D : MonoBehaviour
     [System.Serializable]
     public struct EnemyInfo
     {
+        public int ID;
         public int hp;
         public float trackingRange;
         public int attackDamage;
@@ -161,6 +162,8 @@ public class EnemyController2D : MonoBehaviour
     {
         GameManager.instance.m_CharacterController2D.Hit(m_EnemyInfo.attackDamage);
         currentAttackDelay = m_EnemyInfo.attackDelay;
+        moveSpeed = 0;
+        Debug.Log("Attack");
     }
 
     private void Attacked(int damage)
@@ -177,6 +180,9 @@ public class EnemyController2D : MonoBehaviour
     private void IsDie()
     {
         Debug.Log("죽음");
+        EventManager.instance.QuestObserver(m_EnemyInfo);
+
+
         this.gameObject.SetActive(false);
     }
     
@@ -243,18 +249,23 @@ public class EnemyController2D : MonoBehaviour
         {
             Vector2 dir = myTr.position - targetTr.position;
             float distance = Vector2.Distance(myTr.position, targetTr.position);
+            if ((dir.x < 0 && myTr.localScale.x > 0) ||
+                    (dir.x > 0 && myTr.localScale.x < 0))
+            {
+                Flip();
+            }
+
             if (distance > m_EnemyInfo.trackingRange)
             {
-                
-                if ((dir.x < 0 && myTr.localScale.x > 0) ||
-                    (dir.x > 0 && myTr.localScale.x < 0))
-                {
-                    Flip();
-                }
+                moveSpeed = -myTr.localScale.x;
+                isJumped = true;
+
             }
             else if (distance < m_EnemyInfo.trackingRange)
             {
+                isJumped = false;
                 Attack();
+                
             }
         }
         else if(state == EnemyState.NomalMove)

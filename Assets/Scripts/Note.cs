@@ -38,6 +38,11 @@ public class Note
     /// 퀘스트 깨고난뒤 어떻게 될지
     /// 
     /// 
+    /// 
+    /// 0409 eventManager
+    ///     몬스터를 잡았을때 count가 올라가지 않는 문제
+    ///     evnetManager DeepCopy중 해결해야됨
+    /// 
     ///
 
 

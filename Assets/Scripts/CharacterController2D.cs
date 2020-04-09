@@ -317,7 +317,7 @@ public class CharacterController2D : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector3.forward, 0.1f, 1 << 12);
-        Debug.Log(LayerMask.LayerToName(1 << 12));
+
 
         if (hit)
         {

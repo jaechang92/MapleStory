@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class UIManager : MonoBehaviour
     public GameObject m_EmptyDragObject;
     public GameObject visibleObject;
     public Image expImage;
-
+    public GameObject acceptAndReject;
 
     [HideInInspector]
     public GameObject m_NowObject;
@@ -126,26 +127,38 @@ public class UIManager : MonoBehaviour
 
 
     private int textCount = 0;
-    public void GetText(List<string> texts,NPCController nPCController)
+    private bool m_QusetBool = false;
+    public void GetText(List<string> texts,NPCController nPCController, bool isQuest)
     {
         m_texts = texts;
         visibleObject.SetActive(true);
         NextText();
+        m_QusetBool = isQuest;
         nowNPC = nPCController;
     }
 
 
     public void NextText()
     {
-        if (textCount < m_texts.Count)
+        if (textCount < m_texts.Count - 1)
         {
             visibleObjectInText.text = m_texts[textCount];
         }
+        else if(textCount < m_texts.Count)
+        {
+            Debug.Log("?????????????????????????/");
+            if (m_QusetBool)
+            {
+                acceptAndReject.SetActive(true);
+            }
+            visibleObjectInText.text = m_texts[m_texts.Count-1];
+
+        }
         else
         {
-            visibleObject.SetActive(false);
             textCount = 0;
             nowNPC.questNum++;
+            visibleObject.SetActive(false);
             return;
         }
         textCount++;
@@ -155,6 +168,29 @@ public class UIManager : MonoBehaviour
     public void UpdateExp(int nowExp, int maxExp)
     {
         expImage.fillAmount = nowExp / maxExp;
+    }
+
+
+    public void Accept()
+    {
+        textCount = 0;
+        QuestAdd();
+        nowNPC.questNum++;
+        visibleObject.SetActive(false);
+        acceptAndReject.SetActive(false);
+    }
+    public void Reject()
+    {
+        textCount = 0;
+        visibleObject.SetActive(false);
+        acceptAndReject.SetActive(false);
+    }
+
+    public void QuestAdd()
+    {
+        EventManager.instance.Added(nowNPC.NPCTalk[nowNPC.questNum].questMonsterID, nowNPC.NPCTalk[nowNPC.questNum].killCount, nowNPC.NPCTalk[nowNPC.questNum].reward);
+
+        //nowNPC.NPCTalk
     }
 
 

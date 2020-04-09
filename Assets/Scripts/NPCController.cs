@@ -18,10 +18,14 @@ public class NPCController : MonoBehaviour
     public struct TextList
     {
         public List<string> stringList;
+        public bool isQuest;
+        public int questMonsterID;
+        public int killCount;
+        public EventManager.reward reward;
     }
 
 
-    public List<TextList> textLists;
+    public List<TextList> NPCTalk;
 
 
     public int questNum = 0;
@@ -63,9 +67,9 @@ public class NPCController : MonoBehaviour
                 
 
 
-                if (questNum < textLists.Count)
+                if (questNum < NPCTalk.Count)
                 {
-                    UIManager.instance.GetText(textLists[questNum].stringList, this.gameObject.GetComponent<NPCController>());
+                    UIManager.instance.GetText(NPCTalk[questNum].stringList, this.gameObject.GetComponent<NPCController>(), NPCTalk[questNum].isQuest);
                 }
 
                 //questNum++;
@@ -73,6 +77,7 @@ public class NPCController : MonoBehaviour
                 break;
             case NPCType.CanTalk:
                 Debug.Log("스토리 이야기");
+
                 break;
             default:
                 break;
