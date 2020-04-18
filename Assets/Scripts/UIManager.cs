@@ -127,43 +127,83 @@ public class UIManager : MonoBehaviour
 
 
     private int textCount = 0;
-    private bool m_QusetBool = false;
-    public void GetText(List<string> texts,NPCController nPCController, bool isQuest)
+    public bool m_QusetBool = false;
+
+    private void TextInit(List<string> texts)
     {
         m_texts = texts;
         visibleObject.SetActive(true);
-        NextText();
-        m_QusetBool = isQuest;
-        nowNPC = nPCController;
+        textCount = 0;
     }
 
+    public void GetText(List<string> texts,NPCController nPCController, bool isQuest)
+    {
 
+        TextInit(texts);
+        m_QusetBool = isQuest;
+        nowNPC = nPCController;
+        NextText();
+    }
+    
+    public void GetText(List<string> texts, NPCController nPCController)
+    {
+
+        TextInit(texts);
+        m_QusetBool = false;
+        nowNPC = nPCController;
+        NextText();
+    }
+
+    
+    //public void NextText()
+    //{
+    //    if (textCount < m_texts.Count - 1)
+    //    {
+    //        visibleObjectInText.text = m_texts[textCount];
+    //    }
+    //    else if (textCount < m_texts.Count)
+    //    {
+    //        Debug.Log(textCount);
+    //        Debug.Log(m_texts.Count);
+    //        if (m_QusetBool)
+    //        {
+    //            acceptAndReject.SetActive(true);
+    //        }
+    //        visibleObjectInText.text = m_texts[m_texts.Count - 1];
+
+    //    }
+    //    else
+    //    {
+    //        textCount = 0;
+    //        nowNPC.questNum++;
+    //        visibleObject.SetActive(false);
+    //        return;
+    //    }
+    //    textCount++;
+    //    Debug.Log(textCount);
+    //}
+    
+        
     public void NextText()
     {
-        if (textCount < m_texts.Count - 1)
-        {
-            visibleObjectInText.text = m_texts[textCount];
-        }
-        else if(textCount < m_texts.Count)
-        {
-            Debug.Log("?????????????????????????/");
-            if (m_QusetBool)
-            {
-                acceptAndReject.SetActive(true);
-            }
-            visibleObjectInText.text = m_texts[m_texts.Count-1];
+        Debug.Log("textCount = " + textCount);
+        Debug.Log("m_texts.Count = " + m_texts.Count);
 
-        }
-        else
+        if (textCount == m_texts.Count - 1 && m_QusetBool)
         {
-            textCount = 0;
+            acceptAndReject.SetActive(true);
+        }
+        if (textCount > m_texts.Count -1)
+        {
             nowNPC.questNum++;
             visibleObject.SetActive(false);
             return;
         }
+
+        visibleObjectInText.text = m_texts[textCount];
         textCount++;
-        Debug.Log(textCount);
     }
+
 
     public void UpdateExp(int nowExp, int maxExp)
     {
@@ -173,23 +213,22 @@ public class UIManager : MonoBehaviour
 
     public void Accept()
     {
-        textCount = 0;
         QuestAdd();
         nowNPC.questNum++;
-        visibleObject.SetActive(false);
+        nowNPC.isQuest = true;
         acceptAndReject.SetActive(false);
+        visibleObject.SetActive(false);
     }
     public void Reject()
     {
-        textCount = 0;
-        visibleObject.SetActive(false);
         acceptAndReject.SetActive(false);
+        visibleObject.SetActive(false);
     }
 
     public void QuestAdd()
     {
-        EventManager.instance.Added(nowNPC.NPCTalk[nowNPC.questNum].questMonsterID, nowNPC.NPCTalk[nowNPC.questNum].killCount, nowNPC.NPCTalk[nowNPC.questNum].reward);
-
+        nowNPC.questIndex = EventManager.instance.Added(nowNPC.thisNPCNumber,nowNPC.NPCTalk[nowNPC.questNum].questMonsterID, nowNPC.NPCTalk[nowNPC.questNum].killCount, nowNPC.NPCTalk[nowNPC.questNum].reward);
+        
         //nowNPC.NPCTalk
     }
 

@@ -43,7 +43,13 @@ public class Note
     ///     몬스터를 잡았을때 count가 올라가지 않는 문제
     ///     evnetManager DeepCopy중 해결해야됨
     /// 
+    /// 
+    /// 0414 옵저버 패턴 다시짜기 
+    /// 
+    /// followCam 작성중
     ///
+
+
 
 
 

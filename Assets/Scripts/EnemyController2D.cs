@@ -16,6 +16,7 @@ public class EnemyController2D : MonoBehaviour
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         Debug.Log(GameManager.instance);
         MapEnum = GameManager.instance.m_Mapname;
+        
     }
 
     private void OnEnable()
@@ -33,7 +34,10 @@ public class EnemyController2D : MonoBehaviour
 
     private void OnDisable()
     {
+        EventManager.instance.questUpdateEvnet += QuestToObserver;
+        EventManager.instance.OnQuestEvent();
         CreateSystem.instance.DisableObject(this.gameObject);
+        EventManager.instance.questUpdateEvnet -= QuestToObserver;
     }
 
 
@@ -295,9 +299,26 @@ public class EnemyController2D : MonoBehaviour
     }
 
 
+    public void QuestToObserver()
+    {
+        Debug.Log("호출");
+        for (int i = 0; i < EventManager.instance.quests.Count; i++)
+        {
+            ChangeQuestCount(EventManager.instance.quests, i);
+        }
+    }
+
+
+    void ChangeQuestCount(List<EventManager.QuestSet> inList, int index)
+    {
+        EventManager.QuestSet temp = inList[index];
+        temp.count -= 1;
+        inList[index] = temp;
+    }
+
+
     private void init()
     {
-
     }
     
 }

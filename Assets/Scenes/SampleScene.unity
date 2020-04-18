@@ -1562,7 +1562,7 @@ MonoBehaviour:
   rTime: {x: 1, y: 3}
   m_EnemyInfo:
     ID: 0
-    hp: 10
+    hp: 1
     trackingRange: 2
     attackDamage: 1
     attackRange: 1
@@ -2812,6 +2812,7 @@ MonoBehaviour:
   m_InvenListAll:
   - {fileID: 1657330276}
   - {fileID: 639871872}
+  m_QusetBool: 0
 --- !u!4 &380427582
 Transform:
   m_ObjectHideFlags: 0
@@ -3335,6 +3336,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3350,6 +3352,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482a124d45e91c042b7a2457328bbff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5193,6 +5207,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696634881}
   m_CullTransparentMesh: 0
+--- !u!1 &705003542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705003543}
+  m_Layer: 0
+  m_Name: Boundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &705003543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705003542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 890166833}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &718406502
 GameObject:
   m_ObjectHideFlags: 0
@@ -6932,6 +6976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6200b282699a17742a16f5504fe0741d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisNPCNumber: 0
   m_NPC: 1
   NPCTalk:
   - stringList:
@@ -6950,7 +6995,17 @@ MonoBehaviour:
     killCount: 10
     reward:
       Exp: 100
+  questClearUnClear:
+  - stringList:
+    - "\uD074\uB9AC\uC5B4 \uB418\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4."
+  - stringList:
+    - "\uBCF4\uC0C1"
   questNum: 0
+  questIndex: -1
+  isQuest: 0
+  storyStringList:
+  - "\uBC84\uC12F\uC740 \uD568\uBD80\uB7EC \uBA39\uC73C\uBA74 \uC548\uB418"
+  - "\uB3C5\uC774 \uC788\uC73C\uB2C8\uAE4C"
 --- !u!222 &870560321
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7241,6 +7296,7 @@ Transform:
   m_Children:
   - {fileID: 591577358}
   - {fileID: 395557812}
+  - {fileID: 705003543}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

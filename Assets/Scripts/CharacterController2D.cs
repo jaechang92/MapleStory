@@ -386,6 +386,12 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
+    public void GetReward(EventManager.reward reward)
+    {
+        m_playerInfo.exp += reward.Exp;
+    }
+
+
 
 
 }
